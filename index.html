@@ -1,0 +1,840 @@
+<!DOCTYPE html>
+
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Portfolio Jose Manuel</title>
+
+<link rel="icon" href="fotodesarrollador.png" type="image/png">
+
+<script src="https://cdn.tailwindcss.com"></script>
+
+<script>
+    tailwind.config = {
+        theme: {
+            extend: {
+                fontFamily: {
+                    sans: [
+                        'Inter',
+                        '-apple-system',
+                        'BlinkMacSystemFont',
+                        'Segoe UI',
+                        'sans-serif'
+                    ]
+                }
+            }
+        }
+    }
+</script>
+
+<style>
+    ::selection {
+        background: rgba(255,255,255,.15);
+        color: white;
+    }
+
+    body {
+        background: #000;
+    }
+
+    .glass {
+        background: rgba(18,18,18,.72);
+        backdrop-filter: blur(24px);
+        -webkit-backdrop-filter: blur(24px);
+    }
+
+    .gradient-text {
+        background: linear-gradient(
+            135deg,
+            #ffffff 0%,
+            #a1a1aa 100%
+        );
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+    }
+
+    .hero-glow {
+        background:
+            radial-gradient(
+                circle at 70% 45%,
+                rgba(59,130,246,.16),
+                transparent 30%
+            );
+    }
+
+    .project-card {
+        transform-style: preserve-3d;
+    }
+    #scene-intro,
+    #scene-about,
+    #scene-useful {
+        transform-origin: center center;
+        will-change: transform, opacity;
+    }
+    #hero-video{
+        pointer-events: none;
+        user-select: none;
+    }
+
+
+    @media (prefers-reduced-motion: reduce) {
+        html {
+            scroll-behavior: auto;
+        }
+
+        *,
+        *::before,
+        *::after {
+            animation-duration: .01ms !important;
+            animation-iteration-count: 1 !important;
+            transition-duration: .01ms !important;
+        }
+    }
+
+</style>
+
+
+</head>
+
+<body class="bg-black text-white antialiased">
+
+<!-- =====================================================
+     NAVBAR
+     ===================================================== -->
+
+<header class="fixed inset-x-0 top-0 z-50">
+    <div class="mx-auto mt-3 max-w-5xl px-2 sm:px-4">
+        <nav class="glass flex h-12 items-center justify-between gap-1.5 rounded-full border border-white/[0.08] px-3 shadow-2xl shadow-black/30 sm:gap-3 sm:px-5">
+
+            <a
+                href="https://www.linkedin.com/in/jose-manuel-soldado-jimenez"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="shrink-0 whitespace-nowrap text-[9px] font-medium tracking-tight text-white transition-opacity duration-300 hover:opacity-60 sm:text-sm"
+            >
+                Jose Manuel
+            </a>
+
+            <div class="flex shrink-0 items-center gap-1.5 sm:gap-7">
+
+                <a href="#sobre-mi"
+                   class="shrink-0 whitespace-nowrap text-[9px] text-zinc-400 transition-colors hover:text-white sm:text-xs">
+                    Sobre mí
+                </a>
+
+                <a href="#experiencia"
+                   class="shrink-0 whitespace-nowrap text-[9px] text-zinc-400 transition-colors hover:text-white sm:text-xs">
+                    Experiencia
+                </a>
+
+                <a href="#proyectos"
+                   class="shrink-0 whitespace-nowrap text-[9px] text-zinc-400 transition-colors hover:text-white sm:text-xs">
+                    Proyectos
+                </a>
+
+                <a href="#contacto"
+                   class="shrink-0 whitespace-nowrap text-[9px] text-zinc-400 transition-colors hover:text-white sm:text-xs">
+                    Contacto
+                </a>
+
+                <a
+                    href="cv/CV Jose Manuel Soldado.pdf"
+                    target="_blank"
+                    class="shrink-0 whitespace-nowrap rounded-full bg-white px-2 py-1 text-[9px] font-medium text-black transition-transform duration-300 hover:scale-105 sm:px-4 sm:py-1.5 sm:text-xs"
+                >
+                    CV
+                </a>
+
+            </div>
+
+        </nav>
+    </div>
+</header>
+
+
+<main>
+
+
+<!-- =====================================================
+     SOBRE MÍ · TIMELINE CINEMÁTICA
+     ===================================================== -->
+
+<section
+    id="sobre-mi"
+    class="relative h-[360vh] bg-black"
+>
+
+
+<div
+    id="about-timeline"
+    class="sticky top-0 h-screen overflow-hidden"
+>
+        
+
+    <!-- =================================================
+         ESCENA 1 · INTRO
+         ================================================= -->
+
+    <div
+    id="scene-intro"
+    class="absolute inset-0 z-30 flex h-screen flex-col items-center justify-center px-6"
+>
+
+    <!-- VÍDEO DE FONDO -->
+    <img
+    src="intro.gif"
+    class="absolute inset-0 h-full w-full object-cover opacity-[0.30]"
+    alt=""
+    />
+
+    <!-- CAPA OSCURA -->
+    <div class="absolute inset-0 bg-black/40"></div>
+
+    <!-- CONTENIDO -->
+    <div class="relative z-10 flex flex-col items-center">
+            
+            <p
+                id="hero-kicker"
+                class="mb-8 text-center text-xs font-medium uppercase tracking-[.25em] text-zinc-500"
+            >
+                Desarrollo Web · Automatización · Datos
+            </p>
+
+            <h1
+                id="hero-title"
+                class="text-center text-5xl font-medium leading-[.95] tracking-[-.055em] text-white sm:text-7xl lg:text-[6.5rem]"
+            >
+                Mi trayectoria
+                <br>
+                no ha sido
+                <br>
+                <span class="gradient-text">
+                    lineal.
+                </span>
+            </h1>
+
+            <p
+                id="hero-subtitle"
+                class="mt-10 text-center text-base leading-7 text-zinc-400 sm:text-lg"
+            >
+                Y esa es mi mayor ventaja.
+            </p>
+
+        </div>
+
+</div>
+
+
+    <!-- =================================================
+         ESCENA 2 · SOBRE MÍ
+         ================================================= -->
+
+    <div
+        id="scene-about"
+        class="absolute inset-0 z-20 flex h-screen items-center justify-center bg-black px-6"
+    >
+
+        <div class="mx-auto w-full max-w-6xl">
+
+            <p class="mb-6 text-xs font-medium uppercase tracking-[.25em] text-zinc-600">
+                Sobre mí
+            </p>
+
+            <div class="max-w-4xl">
+
+                <p
+                    class="text-4xl font-medium leading-[1.05] tracking-[-.04em] text-white sm:text-5xl lg:text-6xl"
+                >
+                    Tras años optimizando procesos en distintos sectores,
+                    descubrí que la parte que más me motivaba era resolver
+                    problemas y mejorar sistemas mediante tecnología.
+                </p>
+
+                <p
+                    class="mt-10 max-w-3xl text-base leading-8 text-zinc-500 sm:text-lg"
+                >
+                    Esa inquietud me llevó a especializarme en desarrollo web
+                    y a construir proyectos enfocados en automatización,
+                    organización de datos y mejora de procesos.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =================================================
+         ESCENA 3 · CONSTRUIR COSAS ÚTILES
+         ================================================= -->
+
+        
+    <div
+        id="scene-useful"
+        class="absolute inset-0 z-10 flex h-screen items-center justify-center bg-zinc-950 px-6"
+    >
+
+        <div class="mx-auto w-full max-w-6xl">
+
+
+            <h2
+                class="max-w-6xl text-5xl font-medium leading-[.95] tracking-[-.055em] text-white sm:text-7xl lg:text-[6.5rem]"
+            >
+                Construir cosas útiles
+                <br>
+                <span class="text-zinc-600">
+                    es la prioridad.
+                </span>
+            </h2>
+
+            <div
+                id="useful-text"
+                class="mt-12 grid max-w-6xl gap-8 text-base leading-8 text-zinc-500 sm:text-lg lg:grid-cols-3"
+            >
+
+                <p>
+                    Durante esta transición he aprendido a adaptarme
+                    rápidamente a nuevas herramientas y tecnologías,
+                    trabajando con stacks como
+                    <strong class="font-medium text-white">
+                        Django, FastAPI y React
+                    </strong>.
+                </p>
+
+                <p>
+                    Me interesa especialmente el desarrollo de aplicaciones
+                    donde la lógica, la estructura de datos y la automatización
+                    tengan un impacto real en el funcionamiento del producto.
+                </p>
+
+                <p>
+                    He trabajado en proyectos relacionados con gestión de
+                    archivos, sistemas de permisos, automatización de tareas
+                    y consumo de APIs externas, siempre buscando soluciones
+                    simples, mantenibles y orientadas a la utilidad práctica.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+</section>
+
+<!-- =====================================================
+         EXPERIENCIA
+         ===================================================== -->
+
+    <section
+        id="experiencia"
+        class="relative bg-black py-32 lg:py-48"
+    >
+
+        <div
+    id="experiencia-content"
+    class="mx-auto max-w-6xl px-6 lg:px-12"
+    >
+
+            <div class="grid gap-20 lg:grid-cols-[.7fr_1.3fr]">
+
+                <div class="lg:sticky lg:top-32 lg:h-fit">
+
+                    <h2 class="mt-5 text-4xl font-medium tracking-[-.04em] sm:text-5xl">
+                        Experiencia
+                        <br>
+                        <span class="text-zinc-600">
+                            profesional.
+                        </span>
+                    </h2>
+
+                </div>
+
+
+                <div>
+
+                    <div class="border-l border-white/[0.08] pl-8 lg:pl-12">
+
+                        <div class="relative">
+
+                            <span class="absolute -left-[2.28rem] top-1.5 h-2.5 w-2.5 rounded-full bg-white shadow-[0_0_0_6px_rgba(255,255,255,.05)] lg:-left-[3.05rem]">
+                            </span>
+
+                            <p class="text-xs uppercase tracking-[.2em] text-zinc-600">
+                                Prácticas
+                            </p>
+
+                            <h3 class="mt-4 text-2xl font-medium tracking-tight sm:text-3xl">
+                                Desarrollador Web Full Stack
+                            </h3>
+
+                            <div class="mt-10 space-y-8">
+
+                                <p class="text-base leading-8 text-zinc-400">
+                                    Participé en el desarrollo de una plataforma
+                                    interna utilizando
+                                    <code class="text-sm text-white">Laravel</code>,
+                                    automatizando procesos que anteriormente
+                                    se realizaban manualmente.
+                                </p>
+
+                                <p class="text-base leading-8 text-zinc-500">
+                                    Trabajé en el diseño y organización de la base
+                                    de datos mediante relaciones
+                                    <code class="text-sm text-white">1:N</code>
+                                    y
+                                    <code class="text-sm text-white">N:M</code>,
+                                    utilizando migraciones y tablas pivot para
+                                    gestionar eventos, ponentes y permisos.
+                                </p>
+
+                                <p class="text-base leading-8 text-zinc-500">
+                                    Desarrollé un sistema de subida de archivos
+                                    con validación mediante tokens y verificación
+                                    por correo electrónico, eliminando la necesidad
+                                    de compartir documentación mediante dispositivos
+                                    físicos.
+                                </p>
+
+                                <p class="text-base leading-8 text-zinc-500">
+                                    Toda la lógica se implementó siguiendo el patrón
+                                    <code class="text-sm text-white">MVC</code>
+                                    en
+                                    <code class="text-sm text-white">Laravel</code>.
+                                </p>
+
+                                <p class="text-base leading-8 text-zinc-500">
+                                    También implementé almacenamiento de archivos
+                                    en
+                                    <code class="text-sm text-white">Amazon S3</code>
+                                    para gestionar presentaciones y documentación
+                                    de forma centralizada.
+                                </p>
+
+                                <p class="text-base leading-8 text-zinc-500">
+                                    Durante el desarrollo utilicé
+                                    <code class="text-sm text-white">Git</code>
+                                    para el control de versiones y seguí buenas
+                                    prácticas de organización y mantenimiento
+                                    del código.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         PROYECTOS
+         ===================================================== -->
+
+    <section
+        id="proyectos"
+        class="relative bg-zinc-950 py-32 lg:py-48"
+    >
+
+        <div class="mx-auto max-w-7xl px-6 lg:px-12">
+
+            <div class="mb-24 max-w-3xl">
+
+                <p class="text-xs uppercase tracking-[.25em] text-zinc-600">
+                    Proyectos
+                </p>
+
+                <h2 class="mt-5 text-5xl font-medium tracking-[-.05em] sm:text-6xl lg:text-7xl">
+                    Cosas que he
+                    <span class="text-zinc-600">
+                        construido.
+                    </span>
+                </h2>
+
+                <p class="mt-8 max-w-xl text-base leading-7 text-zinc-500">
+                    Estos proyectos reflejan mi capacidad para resolver
+                    problemas complejos con soluciones técnicas elegantes
+                    y eficientes.
+                </p>
+
+            </div>
+
+
+            <div class="grid gap-5 lg:grid-cols-3">
+
+
+                <!-- MARKETLENS -->
+
+                <article
+                    class="project-card group flex min-h-[520px] flex-col items-center text-center rounded-[2rem] border border-white/[0.07] bg-zinc-900/70 p-7 transition-all duration-700 hover:-translate-y-3 hover:border-white/[0.15] hover:shadow-2xl hover:shadow-black/50"
+                >
+
+                    <div class="flex w-full flex-col items-center gap-3">
+
+                        <span class="text-xs uppercase tracking-[.2em] text-zinc-600">
+                            01
+                        </span>
+
+                        <div class="flex flex-wrap justify-center gap-2">
+
+                            <span class="rounded-full bg-white/[0.05] px-3 py-1 text-[10px] text-zinc-500">
+                                NodeJS
+                            </span>
+
+                            <span class="rounded-full bg-white/[0.05] px-3 py-1 text-[10px] text-zinc-500">
+                                React
+                            </span>
+
+                            <span class="rounded-full bg-white/[0.05] px-3 py-1 text-[10px] text-zinc-500">
+                                PostgreSQL
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                    <div class="relative my-6 h-56 w-full shrink-0 overflow-hidden rounded-2xl bg-zinc-950/40 ring-1 ring-white/[0.06]">
+
+                        <img
+                            src="marketlens.gif"
+                            class="h-full w-full object-cover opacity-[0.30]"
+                            alt=""
+                        />
+
+                    </div>
+
+                    <div class="flex w-full flex-1 flex-col items-center justify-center">
+
+                        <h3 class="text-3xl font-medium leading-tight tracking-[-.035em]">
+                            MarketLens
+                        </h3>
+
+                        <p class="mt-2 text-sm text-zinc-500">
+                            Visualización de Datos de Mercado
+                        </p>
+
+                        <p class="mt-7 text-sm leading-7 text-zinc-500">
+                            Aplicación web desarrollada para la visualización
+                            de datos de mercado. Permite explorar información
+                            de productos, precios y tendencias mediante gráficos
+                            interactivos y tablas dinámicas.
+                        </p>
+
+                        <div class="mt-8 flex justify-center gap-5">
+
+                            <a
+                                href="#"
+                                target="_blank"
+                                class="text-xs font-medium uppercase tracking-[.15em] text-white transition-opacity hover:opacity-50"
+                            >
+                                GitHub →
+                            </a>
+
+                            <a
+                                href="#"
+                                target="_blank"
+                                class="text-xs font-medium uppercase tracking-[.15em] text-zinc-600 transition-colors hover:text-white"
+                            >
+                                Live Demo
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <!-- MARKETHUB -->
+
+                <article
+                    class="project-card group flex min-h-[520px] flex-col items-center text-center rounded-[2rem] border border-white/[0.07] bg-zinc-900/70 p-7 transition-all duration-700 hover:-translate-y-3 hover:border-white/[0.15] hover:shadow-2xl hover:shadow-black/50"
+                >
+
+                    <div class="flex w-full flex-col items-center gap-3">
+
+                        <span class="text-xs uppercase tracking-[.2em] text-zinc-600">
+                            02
+                        </span>
+
+                        <div class="flex flex-wrap justify-center gap-2">
+
+                            <span class="rounded-full bg-white/[0.05] px-3 py-1 text-[10px] text-zinc-500">
+                                NodeJS
+                            </span>
+
+                            <span class="rounded-full bg-white/[0.05] px-3 py-1 text-[10px] text-zinc-500">
+                                React
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                    <div class="relative my-6 h-56 w-full shrink-0 overflow-hidden rounded-2xl bg-zinc-950/40 ring-1 ring-white/[0.06]">
+
+                        <img
+                            src="markethub.gif"
+                            class="h-full w-full object-cover opacity-[0.30]"
+                            alt=""
+                        />
+
+                    </div>
+
+                    <div class="flex w-full flex-1 flex-col items-center justify-center">
+
+                        <h3 class="text-3xl font-medium leading-tight tracking-[-.035em]">
+                            MarketHub
+                        </h3>
+
+                        <p class="mt-2 text-sm text-zinc-500">
+                            Marketplace / Comparador
+                        </p>
+
+                        <p class="mt-7 text-sm leading-7 text-zinc-500">
+                            Aplicación web desarrollada para permitir a los
+                            usuarios comparar precios de hoteles, vuelos,
+                            alquileres y seguros en tiempo real.
+                        </p>
+
+                        <div class="mt-8 flex justify-center gap-5">
+
+                            <a
+                                href="#"
+                                target="_blank"
+                                class="text-xs font-medium uppercase tracking-[.15em] text-white transition-opacity hover:opacity-50"
+                            >
+                                GitHub →
+                            </a>
+
+                            <a
+                                href="https://docs.google.com/spreadsheets/d/1bm_D9lAAzFQcppPQNViYDqoAkWmM-ozvwbovZmP_I-E/edit?usp=sharing"
+                                target="_blank"
+                                class="text-xs font-medium uppercase tracking-[.15em] text-zinc-600 transition-colors hover:text-white"
+                            >
+                                Live Demo
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <!-- ENTERPRISE AI -->
+
+                <article
+                    class="project-card group flex min-h-[520px] flex-col items-center text-center rounded-[2rem] border border-white/[0.07] bg-zinc-900/70 p-7 transition-all duration-700 hover:-translate-y-3 hover:border-white/[0.15] hover:shadow-2xl hover:shadow-black/50"
+                >
+
+                    <div class="flex w-full flex-col items-center gap-3">
+
+                        <span class="text-xs uppercase tracking-[.2em] text-zinc-600">
+                            03
+                        </span>
+
+                        <div class="flex flex-wrap justify-center gap-2">
+
+                            <span class="rounded-full bg-white/[0.05] px-3 py-1 text-[10px] text-zinc-500">
+                                NodeJS
+                            </span>
+
+                            <span class="rounded-full bg-white/[0.05] px-3 py-1 text-[10px] text-zinc-500">
+                                React
+                            </span>
+
+                            <span class="rounded-full bg-white/[0.05] px-3 py-1 text-[10px] text-zinc-500">
+                                PostgreSQL
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                    <div class="relative my-6 h-56 w-full shrink-0 overflow-hidden rounded-2xl bg-zinc-950/40 ring-1 ring-white/[0.06]">
+
+                        <img
+                            src="enterpriseai.gif"
+                            class="h-full w-full object-cover opacity-[0.30]"
+                            alt=""
+                        />
+
+                    </div>
+
+                    <div class="flex w-full flex-1 flex-col items-center justify-center">
+
+                        <h3 class="text-3xl font-medium leading-tight tracking-[-.035em]">
+                            Enterprise / AI
+                        </h3>
+
+                        <p class="mt-2 text-sm text-zinc-500">
+                            Data & Business Intelligence
+                        </p>
+
+                        <p class="mt-7 text-sm leading-7 text-zinc-500">
+                            Plataforma de análisis empresarial que conecta datos
+                            de distintas fuentes, los transforma en métricas útiles
+                            y permite explorar el negocio mediante dashboards,
+                            alertas y consultas en lenguaje natural.
+                        </p>
+
+                        <div class="mt-8 flex justify-center gap-5">
+
+                            <a
+                                href="#"
+                                target="_blank"
+                                class="text-xs font-medium uppercase tracking-[.15em] text-white transition-opacity hover:opacity-50"
+                            >
+                                GitHub →
+                            </a>
+
+                            <a
+                                href="#"
+                                target="_blank"
+                                class="text-xs font-medium uppercase tracking-[.15em] text-zinc-600 transition-colors hover:text-white"
+                            >
+                                Live Demo
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         CONTACTO
+         ===================================================== -->
+
+    <section
+    id="contacto"
+    class="relative overflow-hidden bg-black py-40 lg:py-56"
+    >
+    
+        <div class="absolute inset-0 pointer-events-none">
+            <div class="absolute left-1/2 top-1/2 h-[500px] w-[500px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-blue-500/[0.08] blur-[120px]"></div>
+        </div>
+    
+        <div class="relative mx-auto max-w-5xl px-6 text-center lg:px-12">
+    
+            <p class="text-xs uppercase tracking-[.3em] text-zinc-600">
+                Contacto
+            </p>
+    
+            <h2 class="mt-7 text-6xl font-medium tracking-[-.06em] sm:text-7xl lg:text-9xl">
+                ¿Hablamos?
+            </h2>
+    
+            <p class="mx-auto mt-8 max-w-lg text-base leading-7 text-zinc-500">
+                Estoy abierto a propuestas donde la resolución
+                de problemas técnicos sea la prioridad.
+            </p>
+    
+    
+            <div class="mt-16 grid gap-3 md:grid-cols-3">
+    
+                <a
+                    id="whatsapp"
+                    href="https://wa.me/34656856355?text=Hola%20Jose%20Manuel%2C%20te%20escribo%20de"
+                    target="_blank"
+                    class="group rounded-3xl border border-white/[0.07] bg-zinc-950 p-7 text-left transition-all duration-700 hover:-translate-y-2 hover:border-white/[0.15]"
+                >
+    
+                    <span class="text-xs uppercase tracking-[.2em] text-green-400/70">
+                        WhatsApp
+                    </span>
+    
+                    <span class="mt-12 block text-sm font-medium text-zinc-300 transition-colors group-hover:text-white">
+                        Escríbeme por WhatsApp →
+                    </span>
+    
+                </a>
+    
+    
+                <a
+                    id="telegram"
+                    href="https://t.me/itsjxsx"
+                    target="_blank"
+                    class="group rounded-3xl border border-white/[0.07] bg-zinc-950 p-7 text-left transition-all duration-700 hover:-translate-y-2 hover:border-white/[0.15]"
+                >
+    
+                    <span class="text-xs uppercase tracking-[.2em] text-sky-400/70">
+                        Telegram
+                    </span>
+    
+                    <span class="mt-12 block text-sm font-medium text-zinc-300 transition-colors group-hover:text-white">
+                        Escríbeme por Telegram →
+                    </span>
+    
+                </a>
+    
+    
+                <a
+                    id="email"
+                    href="mailto:josemanuel.soldado@outlook.es?subject=Contacto%20RRHH&body=Hola%20Jose%20Manuel%2C%20te%20escribo%20de"
+                    class="group rounded-3xl border border-white/[0.07] bg-zinc-950 p-7 text-left transition-all duration-700 hover:-translate-y-2 hover:border-white/[0.15]"
+                >
+    
+                    <span class="text-xs uppercase tracking-[.2em] text-indigo-400/70">
+                        Email
+                    </span>
+    
+                    <span class="mt-12 block text-sm font-medium text-zinc-300 transition-colors group-hover:text-white">
+                        Envíame un email →
+                    </span>
+    
+                </a>
+    
+            </div>
+    
+        </div>
+    
+    </section>
+
+</main>
+
+
+<!-- =====================================================
+     FOOTER
+     ===================================================== -->
+
+<footer class="border-t border-white/[0.06] bg-black px-6 py-8">
+
+    <div class="mx-auto flex max-w-7xl items-center justify-between">
+
+        <span class="text-xs text-zinc-700">
+            © 2026 Jose Manuel
+        </span>
+
+    </div>
+
+</footer>
+
+
+<!-- JAVASCRIPT -->
+<script src="script.js"></script>
+
+
+</body>
+</html>
